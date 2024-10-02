@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #E69138;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order failed</h1>
+        <button class="button" onclick="redirectToStore()">Back to store</button>
+    </div>
+
+    <script>
+
+        let user_address = '';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const userAddress = params.get('user_address');
+            user_address = userAddress;
+        
+        });
+
+        function redirectToStore() {
+            // Replace 'YOUR_URL_HERE' with the actual URL you want to redirect to
+            window.location.href = "https://main-store-309305771885.us-central1.run.app/?user_address"+ user_address;
+        }
+    </script>
+</body>
+</html>
